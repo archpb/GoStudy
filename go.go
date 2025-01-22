@@ -2,20 +2,18 @@ package main
 
 import "fmt"
 
+type ss struct {
+	name string
+	age  int
+}
+
+func (s *ss) show() string {
+	return s.name
+}
+
 func main() {
-	var a, b int = 10, 1
-	var p *int = &a
-	a = *p + b
-	println(a)
-
-	var str1, str2 string
-	fmt.Scanf("%s %s", &str1, &str2)
-	println(str1, str2)
-
-	var aaa *int = new(int) * 8
-	*aaa = 100
-	println(aaa)
-
-	var bbb []int = new(int)
-
+	var a ss = ss{"aaabb", 11}
+	fmt.Println(a.show())
+	fmt.Println((&a).show())
+	b := ss{"aaabb", 22}.show()
 }
